@@ -47,7 +47,7 @@ def main():
             time.sleep(2)
             main()
 
-    else:
+    elif searchData(data, accounts) !=  True:
         print("We don't have account data to this site. Check if this site exists, if exsists check if you have account and check if your login data to this site is current")
         time.sleep(1.5)
         main()
@@ -64,6 +64,9 @@ def addPage():
 
     with open("passwords.json","w") as f:
         json.dump(accounts, f, indent = 4)
+
+    print("Added")
+    main()
 
 def generatePassword():
     password = ""
